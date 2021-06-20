@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: osx-ci
+  role_name: osx_ci
   author: ispasov
   description: Ansible role that installs common CI tools on OSX
   company: MacStadium, Inc.
