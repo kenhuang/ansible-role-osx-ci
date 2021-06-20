@@ -62,7 +62,7 @@
     name: "{{ homebrew_packages }}"
   when: homebrew_packages is defined
 
-- name: Installing node 10 LTS
+- name: Installing node 12 LTS
   homebrew:
-    name: node@10
-  notify: Link Node 10 LTS
+    name: node@12
+  notify: Link Node 12 LTS
