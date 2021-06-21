@@ -55,16 +55,6 @@
     name: "{{ homebrew_packages }}"
   when: homebrew_packages is defined
 
-- name: Installing ruby
-  shell: |
-    curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-    curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-    curl -sSL https://get.rvm.io | bash
-    ~/.rvm/bin/rvm install 2.7.3
-    ~/.rvm/bin/rvm alias create default 2.7.3
-    export PATH="$PATH:$HOME/.rvm/bin"
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 - name: Installing global gems
   gem:
     name: "{{ item }}"
