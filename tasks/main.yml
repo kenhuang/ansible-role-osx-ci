@@ -54,7 +54,7 @@
   homebrew:
     name: "{{ homebrew_packages }}"
   when: homebrew_packages is defined
-  
+
 - name: Installing ruby
   shell: |
     brew install rvm
