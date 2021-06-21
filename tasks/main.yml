@@ -50,12 +50,12 @@
     sudo_password: "{{ ansible_become_pass }}"
   with_items: "{{ cask_packages }}"
 
-- name: Installing global gems
+- name: Installing gems
   gem:
     name: "{{ item }}"
     user_install: false
   with_items: "{{ ruby_gems }}"
-  become: true
+#  become: true
 
 - name: Installing homebrew packages
   homebrew:
