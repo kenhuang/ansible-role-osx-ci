@@ -50,17 +50,22 @@
     sudo_password: "{{ ansible_become_pass }}"
   with_items: "{{ cask_packages }}"
 
+- name: Installing homebrew packages
+  homebrew:
+    name: "{{ homebrew_packages }}"
+  when: homebrew_packages is defined
+  
+- name: Installing ruby
+  shell: |
+    brew install rvm
+    rvm install ruby-2.7
+
 - name: Installing global gems
   gem:
     name: "{{ item }}"
     user_install: false
   with_items: "{{ ruby_gems }}"
   become: true
-
-- name: Installing homebrew packages
-  homebrew:
-    name: "{{ homebrew_packages }}"
-  when: homebrew_packages is defined
 
 - name: Installing node 12 LTS
   homebrew:
