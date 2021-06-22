@@ -55,12 +55,12 @@
     name: "{{ homebrew_packages }}"
   when: homebrew_packages is defined
 
-- name: Installing global gems
-  gem:
-    name: "{{ item }}"
-    user_install: false
-  with_items: "{{ ruby_gems }}"
-  become: true
+#- name: Installing global gems
+#  gem:
+#    name: "{{ item }}"
+#    user_install: false
+#  with_items: "{{ ruby_gems }}"
+#  become: true
 
 - name: Installing node 12 LTS
   homebrew:
