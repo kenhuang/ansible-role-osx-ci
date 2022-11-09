@@ -62,7 +62,7 @@
 #  with_items: "{{ ruby_gems }}"
 #  become: true
 
-- name: Installing node 12 LTS
+- name: Installing node 16 LTS
   homebrew:
-    name: node@12
-  notify: Link Node 12 LTS
+    name: node@16
+  notify: Link Node 16 LTS

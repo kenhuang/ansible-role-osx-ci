@@ -1,5 +1,5 @@
-- name: Link Node 12 LTS
+- name: Link Node 16 LTS
   homebrew:
-    name: node@12
+    name: node@16
     state: linked
     install_options: force
